@@ -20,7 +20,7 @@ __Command Template__
 ```
 define command{
         command_name    check_wsus_health
-        command_line    $USER1$/check_wp_update $ARG1$
+        command_line    $USER1$/check_wsus_health $ARG1$
         }
 ```
 
