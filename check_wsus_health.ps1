@@ -4,15 +4,19 @@
 <#
 .SYNOPSIS
   Check WSUS Health
+
 .DESCRIPTION
   Check WSUS Health
-.PARAMETER
+
+.PARAMETER $RunWsusUtil
+  Runs WsusUtil.exe checkhealth before requesting Logs
 
 .OUTPUTS
   Simple Message, finished with Nagios compatible exit codes
    0 = OK
    1 = WARNING
    2 = CRITICAL
+   
 .NOTES
   Version:        1.0
   Author:         Sven Kügler
@@ -29,10 +33,14 @@ Param(
    [switch]$RunWsusUtil
 )
 
+# --------------------------------------------------------------------------------------------
+
 # Parameter to run WsusUtil
 [Boolean]$RunCheckHealth = $RunWsusUtil
+
 # Path to WsusUtil.exe
 [String]$WsusUtilPath = "C:\Program Files\Update Services\Tools"
+
 # Date of Yesterday
 [String]$Date = (Get-Date -Format "dd.MM.yyyy").AddDays(-1)
 
