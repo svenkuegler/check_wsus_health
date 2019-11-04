@@ -1,37 +1,54 @@
-#Requires -version 2
-#Requires -RunAsAdministrator
 
-<#
-.SYNOPSIS
-  Check WSUS Health
+<#PSScriptInfo
 
-.DESCRIPTION
-  Check WSUS Health
+.VERSION 1.1.0
 
-.PARAMETER $RunWsusUtil
-  Runs WsusUtil.exe checkhealth before requesting Logs
+.GUID f6224bba-6b59-4c76-b22a-8da7f21b39d4
 
-.OUTPUTS
-  Simple Message, finished with Nagios compatible exit codes
-   0 = OK
-   1 = WARNING
-   2 = CRITICAL
-   
-.NOTES
-  Version:        1.0
+.AUTHOR Sven Kuegler
+
+.COMPANYNAME None
+
+.COPYRIGHT None
+
+.TAGS Nagios Check WSUS WsusUtil
+
+.LICENSEURI https://github.com/svenkuegler/check_wsus_health/blob/master/LICENSE
+
+.PROJECTURI https://github.com/svenkuegler/check_wsus_health
+
+.ICONURI 
+
+.EXTERNALMODULEDEPENDENCIES None
+
+.REQUIREDSCRIPTS None
+
+.EXTERNALSCRIPTDEPENDENCIES None
+
+.RELEASENOTES
+Version:        1.0
   Author:         Sven Kuegler
   Creation Date:  10.10.2019
   Purpose/Change: Initial script development
-
   Version:        1.1
   Author:         Sven Kuegler
   Creation Date:  21.10.2019
   Purpose/Change: Output Message Changes
-  
-.EXAMPLE
-  -
-#>
 
+#> 
+
+#Requires -Module None
+#Requires -Version 2
+#Requires -RunAsAdministrator
+
+<#
+.SYNOPSIS
+Check WSUS Health
+
+.DESCRIPTION 
+Check WSUS Health
+
+#>
 [CmdletBinding()]
 Param(
   [Parameter(Mandatory=$false)]
